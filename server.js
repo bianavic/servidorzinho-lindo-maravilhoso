@@ -10,11 +10,15 @@ const server = http.createServer(function (request, response){
     } else if (request.url === '/comidas') {
         if (request.method === 'GET') {
             response.writeHead(200, {
-                "Content-Type": "text/html;charset=utf-8" //linguagem node pura
+                "Content-Type": "application/json", // informa q o corpo sera um json
+                'Access-Control-Allow-Origin': "*"
+                //"Content-Type": "text/html;charset=utf-8" //linguagem node pura
                         }) // gostaria muito que vc lesse determinados tipos, como o html
             //esse é o comando que responde no nosso postman
          //request e qdo alguem manda um get? a gente abre o postman?
-        response.end('<h1>Respostão do GET</h1>')
+        response.write(JSON.stringify(comidas)) //pediu para virar um argumento dentro da funcao stringfy
+            
+         response.end('<h1>Respostão do GET</h1>')
     } else if (request.method === 'POST') {
         response.writeHead(200, {
             "Content-Type": "text/html;charset=utf-8"
