@@ -1,3 +1,27 @@
+const comidas = {
+    comidas: [
+    {
+      nome: "Batata frita",
+      descricao: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. ",
+      imagem: "img/Batata-frita.jpg"
+    },
+    {
+      nome: "Macarronada",
+      descricao: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. ",
+      imagem: "img/macarronada.jpg"
+    },
+    {
+      nome: "Falafel",
+      descricao: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. ",
+      imagem: "img/falafel.jpg"
+    },
+    {
+      nome: "Creme de abóbora",
+      descricao: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. ",
+      imagem: "img/creme-de-abobora.jpg"
+    }]
+}
+
 const http = require('http')
 const utf8 = require('utf8')
 //createServer é uma funcao que mora dentro do http modules
@@ -18,7 +42,7 @@ const server = http.createServer(function (request, response){
          //request e qdo alguem manda um get? a gente abre o postman?
         response.write(JSON.stringify(comidas)) //pediu para virar um argumento dentro da funcao stringfy
             
-         response.end('<h1>Respostão do GET</h1>')
+         response.end()
     } else if (request.method === 'POST') {
         response.writeHead(200, {
             "Content-Type": "text/html;charset=utf-8"
