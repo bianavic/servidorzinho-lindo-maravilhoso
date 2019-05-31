@@ -25,6 +25,10 @@ const comidas = [
 const getAll = () => {
     return comidas
 }
+const add = (comida) => {
+    comidas.push(comida)
+}
 module.exports = {
-    getAll
+    getAll,
+    add
 }
