@@ -1,4 +1,4 @@
 const pratos = [
 
 ]
-module.exports(pratos)
+module.exports = {pratos}
