@@ -6,17 +6,20 @@ const controller = require('./ComidasController')
 
 const server = express();
 server.use(cors())
+server.use(bodyParser.json())
 
 server.get("/comidas", (request, response)=>{
   response.send(controller.getAll())
-
 })
 
-server.post('/comidas', bodyParser.json(), (request, response) => {
-  controller.add(request.body)
-  response.send(201)
-
+server.post('/comidas', (request, response) => {
+  response.send(controller.add(request.body))
 })
+
+/* server.delete('/comidas/:id', (request, response) => {
+  controller.remove(request.params.id)
+  response.sendStatus(204)
+}) */
 
 server.listen(3000);
 console.log('Servidor rodando na porta 3000');
