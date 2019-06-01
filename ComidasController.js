@@ -1,7 +1,7 @@
-const comidas = []
 
+const repository = require('/ComidasRepositorio')
 const getAll = () => {
-    return comidas
+    return repository.pratos
 }
 const add = (comida) => {
   comida.id = Math.random().toString(36).substr(-8)  
@@ -15,6 +15,8 @@ const remove = (id) => {
 }))
 }
 module.exports = {
-    getAll,
-    add
+  pratos,  
+  getAll,
+    add,
+    remove
 }
