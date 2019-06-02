@@ -14,6 +14,7 @@ server.get('/comidas', (request, response) => {
 
 server.post('/comidas', (request, response) => {
   controller.add(request.body)
+  response.sendStatus(201)
 })
 
 server.delete('/comidas/:id', (request, response) => {
