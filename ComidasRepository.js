@@ -1,4 +1,3 @@
-const pratos = [
-
+const comidas = [
 ]
-module.exports = {pratos}
+module.exports = { comidas }
