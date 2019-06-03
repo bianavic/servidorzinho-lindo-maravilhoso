@@ -4,6 +4,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const controller = require('./ComidasController')
 
+controller.get()
+
 const server = express()
 server.use(cors())
 server.use(bodyParser.json())
@@ -14,7 +16,7 @@ server.get('/comidas', (request, response) => {
 
 server.post('/comidas', (request, response) => {
   controller.add(request.body)
-  response.sendStatus(201)
+  response.send(201)
 })
 
 server.delete('/comidas/:id', (request, response) => {
@@ -23,7 +25,7 @@ server.delete('/comidas/:id', (request, response) => {
 })
 
 server.put('./comidas/:id', (request, response) => {
-  controller.change(request.body)
+  controller.change(request.params.id, request.body)
   response.sendStatus(204)
 })
 
